@@ -59,11 +59,20 @@
             this.Caesar_choice = new System.Windows.Forms.NumericUpDown();
             this.Caesar_compar = new System.Windows.Forms.CheckBox();
             this.Caesar_AllAscii = new System.Windows.Forms.CheckBox();
+            this.btn_Caesar_clear = new System.Windows.Forms.Button();
+            this.webBrowser_md5 = new System.Windows.Forms.WebBrowser();
+            this.btn_cmd5 = new System.Windows.Forms.Button();
+            this.btn_chamd5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_pmd5 = new System.Windows.Forms.Button();
+            this.text_md5 = new System.Windows.Forms.TextBox();
+            this.btn_md5 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.Base.SuspendLayout();
             this.Morse.SuspendLayout();
             this.Caesar.SuspendLayout();
             this.JS.SuspendLayout();
+            this.MD5.SuspendLayout();
             this.Brainfuck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Caesar_choice)).BeginInit();
             this.SuspendLayout();
@@ -209,6 +218,7 @@
             // 
             // Caesar
             // 
+            this.Caesar.Controls.Add(this.btn_Caesar_clear);
             this.Caesar.Controls.Add(this.Caesar_AllAscii);
             this.Caesar.Controls.Add(this.Caesar_compar);
             this.Caesar.Controls.Add(this.Caesar_choice);
@@ -299,6 +309,13 @@
             // 
             // MD5
             // 
+            this.MD5.Controls.Add(this.btn_md5);
+            this.MD5.Controls.Add(this.text_md5);
+            this.MD5.Controls.Add(this.btn_pmd5);
+            this.MD5.Controls.Add(this.label2);
+            this.MD5.Controls.Add(this.btn_chamd5);
+            this.MD5.Controls.Add(this.btn_cmd5);
+            this.MD5.Controls.Add(this.webBrowser_md5);
             this.MD5.Location = new System.Drawing.Point(4, 26);
             this.MD5.Name = "MD5";
             this.MD5.Size = new System.Drawing.Size(803, 402);
@@ -356,7 +373,7 @@
             // 
             // btn_Caesar_start
             // 
-            this.btn_Caesar_start.Location = new System.Drawing.Point(690, 161);
+            this.btn_Caesar_start.Location = new System.Drawing.Point(598, 163);
             this.btn_Caesar_start.Name = "btn_Caesar_start";
             this.btn_Caesar_start.Size = new System.Drawing.Size(86, 32);
             this.btn_Caesar_start.TabIndex = 2;
@@ -366,7 +383,7 @@
             // 
             // Caesar_choice
             // 
-            this.Caesar_choice.Location = new System.Drawing.Point(618, 167);
+            this.Caesar_choice.Location = new System.Drawing.Point(526, 169);
             this.Caesar_choice.Maximum = new decimal(new int[] {
             25,
             0,
@@ -378,7 +395,6 @@
             0,
             0});
             this.Caesar_choice.Name = "Caesar_choice";
-            this.Caesar_choice.ReadOnly = true;
             this.Caesar_choice.Size = new System.Drawing.Size(55, 23);
             this.Caesar_choice.TabIndex = 3;
             this.Caesar_choice.Value = new decimal(new int[] {
@@ -392,7 +408,7 @@
             this.Caesar_compar.AutoSize = true;
             this.Caesar_compar.Checked = true;
             this.Caesar_compar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Caesar_compar.Location = new System.Drawing.Point(550, 168);
+            this.Caesar_compar.Location = new System.Drawing.Point(458, 170);
             this.Caesar_compar.Name = "Caesar_compar";
             this.Caesar_compar.Size = new System.Drawing.Size(51, 21);
             this.Caesar_compar.TabIndex = 4;
@@ -402,12 +418,89 @@
             // Caesar_AllAscii
             // 
             this.Caesar_AllAscii.AutoSize = true;
-            this.Caesar_AllAscii.Location = new System.Drawing.Point(481, 168);
+            this.Caesar_AllAscii.Location = new System.Drawing.Point(389, 170);
             this.Caesar_AllAscii.Name = "Caesar_AllAscii";
             this.Caesar_AllAscii.Size = new System.Drawing.Size(63, 21);
             this.Caesar_AllAscii.TabIndex = 5;
             this.Caesar_AllAscii.Text = "带符号";
             this.Caesar_AllAscii.UseVisualStyleBackColor = true;
+            // 
+            // btn_Caesar_clear
+            // 
+            this.btn_Caesar_clear.Location = new System.Drawing.Point(690, 163);
+            this.btn_Caesar_clear.Name = "btn_Caesar_clear";
+            this.btn_Caesar_clear.Size = new System.Drawing.Size(86, 32);
+            this.btn_Caesar_clear.TabIndex = 6;
+            this.btn_Caesar_clear.Text = "清空输出框";
+            this.btn_Caesar_clear.UseVisualStyleBackColor = true;
+            this.btn_Caesar_clear.Click += new System.EventHandler(this.btn_Caesar_clear_Click);
+            // 
+            // webBrowser_md5
+            // 
+            this.webBrowser_md5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser_md5.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser_md5.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser_md5.Name = "webBrowser_md5";
+            this.webBrowser_md5.Size = new System.Drawing.Size(803, 402);
+            this.webBrowser_md5.TabIndex = 0;
+            this.webBrowser_md5.Url = new System.Uri("http://www.cmd5.com/", System.UriKind.Absolute);
+            // 
+            // btn_cmd5
+            // 
+            this.btn_cmd5.Location = new System.Drawing.Point(77, 3);
+            this.btn_cmd5.Name = "btn_cmd5";
+            this.btn_cmd5.Size = new System.Drawing.Size(86, 32);
+            this.btn_cmd5.TabIndex = 1;
+            this.btn_cmd5.Text = "cmd5";
+            this.btn_cmd5.UseVisualStyleBackColor = true;
+            this.btn_cmd5.Click += new System.EventHandler(this.btn_cmd5_Click);
+            // 
+            // btn_chamd5
+            // 
+            this.btn_chamd5.Location = new System.Drawing.Point(169, 3);
+            this.btn_chamd5.Name = "btn_chamd5";
+            this.btn_chamd5.Size = new System.Drawing.Size(86, 32);
+            this.btn_chamd5.TabIndex = 2;
+            this.btn_chamd5.Text = "chamd5";
+            this.btn_chamd5.UseVisualStyleBackColor = true;
+            this.btn_chamd5.Click += new System.EventHandler(this.btn_chamd5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(3, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "浏览器打开:";
+            // 
+            // btn_pmd5
+            // 
+            this.btn_pmd5.Location = new System.Drawing.Point(261, 3);
+            this.btn_pmd5.Name = "btn_pmd5";
+            this.btn_pmd5.Size = new System.Drawing.Size(86, 32);
+            this.btn_pmd5.TabIndex = 4;
+            this.btn_pmd5.Text = "pmd5";
+            this.btn_pmd5.UseVisualStyleBackColor = true;
+            this.btn_pmd5.Click += new System.EventHandler(this.btn_pmd5_Click);
+            // 
+            // text_md5
+            // 
+            this.text_md5.Location = new System.Drawing.Point(353, 8);
+            this.text_md5.Name = "text_md5";
+            this.text_md5.Size = new System.Drawing.Size(249, 23);
+            this.text_md5.TabIndex = 5;
+            // 
+            // btn_md5
+            // 
+            this.btn_md5.Location = new System.Drawing.Point(608, 3);
+            this.btn_md5.Name = "btn_md5";
+            this.btn_md5.Size = new System.Drawing.Size(86, 32);
+            this.btn_md5.TabIndex = 6;
+            this.btn_md5.Text = "md5加密";
+            this.btn_md5.UseVisualStyleBackColor = true;
+            this.btn_md5.Click += new System.EventHandler(this.btn_md5_Click);
             // 
             // FM_main
             // 
@@ -425,6 +518,8 @@
             this.Caesar.ResumeLayout(false);
             this.Caesar.PerformLayout();
             this.JS.ResumeLayout(false);
+            this.MD5.ResumeLayout(false);
+            this.MD5.PerformLayout();
             this.Brainfuck.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Caesar_choice)).EndInit();
             this.ResumeLayout(false);
@@ -464,6 +559,14 @@
         private System.Windows.Forms.Button btn_Caesar_start;
         private System.Windows.Forms.TextBox text_Caesar_output;
         private System.Windows.Forms.CheckBox Caesar_AllAscii;
+        private System.Windows.Forms.Button btn_Caesar_clear;
+        private System.Windows.Forms.WebBrowser webBrowser_md5;
+        private System.Windows.Forms.Button btn_cmd5;
+        private System.Windows.Forms.Button btn_pmd5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_chamd5;
+        private System.Windows.Forms.Button btn_md5;
+        private System.Windows.Forms.TextBox text_md5;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace CTFDecryptEncrypt
 {
@@ -62,8 +63,50 @@ namespace CTFDecryptEncrypt
                     output += temp;
                 }
             }
-
+            else
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    char temp = text[i];
+                    int asciinum = temp + num;
+                    if (temp < 58 && temp > 47) //数字
+                    {
+                        if (asciinum > 77)
+                            asciinum = asciinum - 30;
+                        if (asciinum > 67)
+                            asciinum = asciinum - 20;
+                        if (asciinum > 57)
+                            asciinum = asciinum - 10;
+                    }
+                    if (temp < 91 && temp > 64) //A-Z
+                    {
+                        if (asciinum > 90)
+                            asciinum = asciinum - 26;
+                    }
+                    if (temp < 123 && temp > 96) //a-z
+                    {
+                        if (asciinum > 122)
+                            asciinum = asciinum - 26;
+                    }
+                    temp = (char)(asciinum);
+                    output += temp;
+                }
+            }
             return output;
+        }
+
+        /// <summary>
+        /// MD5加密
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        static public string md5(string text)
+        {
+            byte[] result = Encoding.Default.GetBytes(text);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(result);
+            string encryptResult = BitConverter.ToString(output).Replace("-", "");
+            return encryptResult;
         }
 
 

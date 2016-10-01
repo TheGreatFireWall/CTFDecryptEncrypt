@@ -48,7 +48,7 @@ namespace CTFDecryptEncrypt
             System.Diagnostics.Process.Start("http://tool.chinaz.com/js.aspx");
         }
         #endregion
-
+        #region Caesar模块
         private void btn_Caesar_start_Click(object sender, EventArgs e)
         {
             if(Caesar_compar.Checked == false)
@@ -67,5 +67,33 @@ namespace CTFDecryptEncrypt
                 text_Caesar_output.Text += "\r\n";
             }
         }
+
+        private void btn_Caesar_clear_Click(object sender, EventArgs e)
+        {
+            text_Caesar_output.Text = "";
+        }
+        #endregion
+        #region MD5模块
+        private void btn_cmd5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.cmd5.com/");
+        }
+
+        private void btn_chamd5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.chamd5.org/");
+        }
+
+        private void btn_pmd5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://pmd5.com/");
+        }
+
+        private void btn_md5_Click(object sender, EventArgs e)
+        {
+            text_md5.Text = DecryptEncrypt.md5(text_md5.Text);
+        }
+        #endregion
+
     }
 }
