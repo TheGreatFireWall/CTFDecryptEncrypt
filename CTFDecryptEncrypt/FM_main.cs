@@ -26,12 +26,7 @@ namespace CTFDecryptEncrypt
         {
             text_Base_output.Text = DecryptEncrypt.e_base64(text_Base_input.Text);
         }
-
-        private void btn_DeBase32_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://tools.deamwork.com/crypt/decrypt/base32decode.html");
-        }
-
+        
         private void btn_Base642Pic_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.vgot.net/test/image2base64.php");
@@ -40,6 +35,20 @@ namespace CTFDecryptEncrypt
         private void btn_Pic2Base64_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://tool.oschina.net/encrypt?type=4");
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            text_Base_input.Text = text_Base_output.Text;
+            text_Base_output.Text = "";
+        }
+        private void btn_Base32Decode_Click(object sender, EventArgs e)
+        {
+            text_Base_output.Text = DecryptEncrypt.Base32Decode(text_Base_input.Text);
+        }
+
+        private void btn_Base32Encode_Click(object sender, EventArgs e)
+        {
+            text_Base_output.Text = DecryptEncrypt.Base32Encode(text_Base_input.Text);
         }
         #endregion
         #region JS模块
@@ -93,7 +102,21 @@ namespace CTFDecryptEncrypt
         {
             text_md5.Text = DecryptEncrypt.md5(text_md5.Text);
         }
+
         #endregion
 
+        private void btn_Word_Click(object sender, EventArgs e)
+        {
+            FM_word son = new FM_word();
+            son.Owner = this;
+            son.Show();
+        }
+
+        private void btn_Conversion_Click(object sender, EventArgs e)
+        {
+            FM_Conversion son = new FM_Conversion();
+            son.Owner = this;
+            son.Show();
+        }
     }
 }

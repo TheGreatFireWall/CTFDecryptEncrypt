@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace CTFDecryptEncrypt
 {
@@ -12,7 +13,6 @@ namespace CTFDecryptEncrypt
     {
         /// <summary>
         /// base64加密解密
-        /// http://blog.163.com/li_wangyuan/blog/static/52060062009113042559573/
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -42,7 +42,95 @@ namespace CTFDecryptEncrypt
                 return "";
             }
         }
-        
+        //https://github.com/koike/Base32
+        public static string Base32Encode(string str)
+        {
+            var bin = "";
+            foreach (var _ in str.Select(c => Convert.ToString(c, 16)))
+            {
+                bin += Convert.ToString(Convert.ToInt32(_[0] + "", 16), 2).PadLeft(4, '0');
+                bin += Convert.ToString(Convert.ToInt32(_[1] + "", 16), 2).PadLeft(4, '0');
+            }
+            while (bin.Length % 5 != 0)
+            {
+                bin += '0';
+            }
+
+            var bins = new string[bin.Length / 5];
+            for (var i = 0; i < bins.Length; i++)
+            {
+                for (var j = 0; j < 5; j++)
+                {
+                    bins[i] += bin[i * 5 + j];
+                }
+            }
+
+            str = "";
+            foreach (var n in bins.Select(t => Convert.ToInt32(t, 2)))
+            {
+                if (n < 26)
+                {
+                    str += (char)(n + 0x41);
+                }
+                else
+                {
+                    str += (char)(n + 0x32 - 26);
+                }
+            }
+
+            while (str.Length % 8 != 0)
+            {
+                str += '=';
+            }
+
+            return str;
+        }
+        public static string Base32Decode(string str)
+        {
+            str = Regex.Replace(str, "=", "");
+            var bin = "";
+            foreach (var t in str)
+            {
+                var n = 0;
+                if (t < 0x38)
+                {
+                    n = t - 0x30 + 24;
+                }
+                else
+                {
+                    n = t - 0x41;
+                }
+                bin += Convert.ToString(n, 2).PadLeft(5, '0');
+            }
+
+            while (bin.Length % 4 != 0 && bin[bin.Length - 1].Equals('0'))
+            {
+                bin = bin.Remove(bin.Length - 1);
+            }
+
+            var s = "";
+
+            for (var i = 0; i < bin.Length / 4; i++)
+            {
+                var _ = "";
+                for (var j = 0; j < 4; j++)
+                {
+                    _ += bin[i * 4 + j];
+                }
+                s += Convert.ToString(Convert.ToInt32(_, 2), 16);
+            }
+
+            str = "";
+
+            for (var i = 0; i < s.Length / 2; i++)
+            {
+                var _ = s[i * 2] + "" + s[i * 2 + 1];
+                str += (char)Convert.ToInt32(_, 16);
+            }
+
+            return str;
+        }
+       
         /// <summary>
         /// Caesar加密解密
         /// </summary>
@@ -111,4 +199,7 @@ namespace CTFDecryptEncrypt
 
 
     }
+   
+
+
 }
