@@ -59,6 +59,7 @@
             this.Hash = new System.Windows.Forms.TabPage();
             this.RailFence = new System.Windows.Forms.TabPage();
             this.Bacon = new System.Windows.Forms.TabPage();
+            this.Pig = new System.Windows.Forms.TabPage();
             this.AES = new System.Windows.Forms.TabPage();
             this.MD5 = new System.Windows.Forms.TabPage();
             this.btn_md5 = new System.Windows.Forms.Button();
@@ -69,9 +70,8 @@
             this.btn_cmd5 = new System.Windows.Forms.Button();
             this.webBrowser_md5 = new System.Windows.Forms.WebBrowser();
             this.others = new System.Windows.Forms.TabPage();
-            this.btn_Word = new System.Windows.Forms.Button();
             this.btn_Conversion = new System.Windows.Forms.Button();
-            this.Pig = new System.Windows.Forms.TabPage();
+            this.btn_Word = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.btn_Base_re.SuspendLayout();
             this.Morse.SuspendLayout();
@@ -275,11 +275,11 @@
             // Caesar_AllAscii
             // 
             this.Caesar_AllAscii.AutoSize = true;
-            this.Caesar_AllAscii.Location = new System.Drawing.Point(389, 170);
+            this.Caesar_AllAscii.Location = new System.Drawing.Point(353, 170);
             this.Caesar_AllAscii.Name = "Caesar_AllAscii";
-            this.Caesar_AllAscii.Size = new System.Drawing.Size(63, 21);
+            this.Caesar_AllAscii.Size = new System.Drawing.Size(99, 21);
             this.Caesar_AllAscii.TabIndex = 5;
-            this.Caesar_AllAscii.Text = "带符号";
+            this.Caesar_AllAscii.Text = "带符号加解密";
             this.Caesar_AllAscii.UseVisualStyleBackColor = true;
             // 
             // Caesar_compar
@@ -389,7 +389,7 @@
             // 
             this.Url.Location = new System.Drawing.Point(4, 26);
             this.Url.Name = "Url";
-            this.Url.Size = new System.Drawing.Size(826, 402);
+            this.Url.Size = new System.Drawing.Size(801, 401);
             this.Url.TabIndex = 4;
             this.Url.Text = "URL";
             this.Url.UseVisualStyleBackColor = true;
@@ -398,7 +398,7 @@
             // 
             this.UnicodeAscii.Location = new System.Drawing.Point(4, 26);
             this.UnicodeAscii.Name = "UnicodeAscii";
-            this.UnicodeAscii.Size = new System.Drawing.Size(826, 402);
+            this.UnicodeAscii.Size = new System.Drawing.Size(801, 401);
             this.UnicodeAscii.TabIndex = 5;
             this.UnicodeAscii.Text = "Unicode/Ascii";
             this.UnicodeAscii.UseVisualStyleBackColor = true;
@@ -407,7 +407,7 @@
             // 
             this.Hash.Location = new System.Drawing.Point(4, 26);
             this.Hash.Name = "Hash";
-            this.Hash.Size = new System.Drawing.Size(826, 402);
+            this.Hash.Size = new System.Drawing.Size(801, 401);
             this.Hash.TabIndex = 6;
             this.Hash.Text = "Hash";
             this.Hash.UseVisualStyleBackColor = true;
@@ -416,7 +416,7 @@
             // 
             this.RailFence.Location = new System.Drawing.Point(4, 26);
             this.RailFence.Name = "RailFence";
-            this.RailFence.Size = new System.Drawing.Size(826, 402);
+            this.RailFence.Size = new System.Drawing.Size(801, 401);
             this.RailFence.TabIndex = 7;
             this.RailFence.Text = "栅栏密码";
             this.RailFence.UseVisualStyleBackColor = true;
@@ -425,16 +425,25 @@
             // 
             this.Bacon.Location = new System.Drawing.Point(4, 26);
             this.Bacon.Name = "Bacon";
-            this.Bacon.Size = new System.Drawing.Size(826, 402);
+            this.Bacon.Size = new System.Drawing.Size(801, 401);
             this.Bacon.TabIndex = 11;
             this.Bacon.Text = "培根密码";
             this.Bacon.UseVisualStyleBackColor = true;
+            // 
+            // Pig
+            // 
+            this.Pig.Location = new System.Drawing.Point(4, 26);
+            this.Pig.Name = "Pig";
+            this.Pig.Size = new System.Drawing.Size(801, 401);
+            this.Pig.TabIndex = 13;
+            this.Pig.Text = "猪圈密码";
+            this.Pig.UseVisualStyleBackColor = true;
             // 
             // AES
             // 
             this.AES.Location = new System.Drawing.Point(4, 26);
             this.AES.Name = "AES";
-            this.AES.Size = new System.Drawing.Size(826, 402);
+            this.AES.Size = new System.Drawing.Size(801, 401);
             this.AES.TabIndex = 8;
             this.AES.Text = "AES/DES";
             this.AES.UseVisualStyleBackColor = true;
@@ -533,16 +542,6 @@
             this.others.Text = "其它";
             this.others.UseVisualStyleBackColor = true;
             // 
-            // btn_Word
-            // 
-            this.btn_Word.Location = new System.Drawing.Point(19, 16);
-            this.btn_Word.Name = "btn_Word";
-            this.btn_Word.Size = new System.Drawing.Size(86, 32);
-            this.btn_Word.TabIndex = 7;
-            this.btn_Word.Text = "文本处理";
-            this.btn_Word.UseVisualStyleBackColor = true;
-            this.btn_Word.Click += new System.EventHandler(this.btn_Word_Click);
-            // 
             // btn_Conversion
             // 
             this.btn_Conversion.Location = new System.Drawing.Point(127, 16);
@@ -553,14 +552,15 @@
             this.btn_Conversion.UseVisualStyleBackColor = true;
             this.btn_Conversion.Click += new System.EventHandler(this.btn_Conversion_Click);
             // 
-            // Pig
+            // btn_Word
             // 
-            this.Pig.Location = new System.Drawing.Point(4, 26);
-            this.Pig.Name = "Pig";
-            this.Pig.Size = new System.Drawing.Size(826, 402);
-            this.Pig.TabIndex = 13;
-            this.Pig.Text = "猪圈密码";
-            this.Pig.UseVisualStyleBackColor = true;
+            this.btn_Word.Location = new System.Drawing.Point(19, 16);
+            this.btn_Word.Name = "btn_Word";
+            this.btn_Word.Size = new System.Drawing.Size(86, 32);
+            this.btn_Word.TabIndex = 7;
+            this.btn_Word.Text = "文本处理";
+            this.btn_Word.UseVisualStyleBackColor = true;
+            this.btn_Word.Click += new System.EventHandler(this.btn_Word_Click);
             // 
             // FM_main
             // 

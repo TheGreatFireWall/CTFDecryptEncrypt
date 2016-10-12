@@ -166,15 +166,19 @@ namespace CTFDecryptEncrypt
                         if (asciinum > 57)
                             asciinum = asciinum - 10;
                     }
-                    if (temp < 91 && temp > 64) //A-Z
+                    else if (temp < 91 && temp > 64) //A-Z
                     {
                         if (asciinum > 90)
                             asciinum = asciinum - 26;
                     }
-                    if (temp < 123 && temp > 96) //a-z
+                    else if (temp < 123 && temp > 96) //a-z
                     {
                         if (asciinum > 122)
                             asciinum = asciinum - 26;
+                    }
+                    else
+                    {
+                        asciinum = temp;
                     }
                     temp = (char)(asciinum);
                     output += temp;
