@@ -36,8 +36,8 @@
             this.btn_Pic2Base64 = new System.Windows.Forms.Button();
             this.btn_Base642Pic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_EnBase64 = new System.Windows.Forms.Button();
-            this.btn_DeBase64 = new System.Windows.Forms.Button();
+            this.btn_Base64Encode = new System.Windows.Forms.Button();
+            this.btn_Base64Decode = new System.Windows.Forms.Button();
             this.text_Base_output = new System.Windows.Forms.TextBox();
             this.text_Base_input = new System.Windows.Forms.TextBox();
             this.Morse = new System.Windows.Forms.TabPage();
@@ -115,8 +115,8 @@
             this.btn_Base_re.Controls.Add(this.btn_Pic2Base64);
             this.btn_Base_re.Controls.Add(this.btn_Base642Pic);
             this.btn_Base_re.Controls.Add(this.label1);
-            this.btn_Base_re.Controls.Add(this.btn_EnBase64);
-            this.btn_Base_re.Controls.Add(this.btn_DeBase64);
+            this.btn_Base_re.Controls.Add(this.btn_Base64Encode);
+            this.btn_Base_re.Controls.Add(this.btn_Base64Decode);
             this.btn_Base_re.Controls.Add(this.text_Base_output);
             this.btn_Base_re.Controls.Add(this.text_Base_input);
             this.btn_Base_re.Location = new System.Drawing.Point(4, 26);
@@ -186,25 +186,25 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "其它：";
             // 
-            // btn_EnBase64
+            // btn_Base64Encode
             // 
-            this.btn_EnBase64.Location = new System.Drawing.Point(693, 146);
-            this.btn_EnBase64.Name = "btn_EnBase64";
-            this.btn_EnBase64.Size = new System.Drawing.Size(86, 31);
-            this.btn_EnBase64.TabIndex = 3;
-            this.btn_EnBase64.Text = "Base64加密";
-            this.btn_EnBase64.UseVisualStyleBackColor = true;
-            this.btn_EnBase64.Click += new System.EventHandler(this.btn_EnBase64_Click);
+            this.btn_Base64Encode.Location = new System.Drawing.Point(693, 146);
+            this.btn_Base64Encode.Name = "btn_Base64Encode";
+            this.btn_Base64Encode.Size = new System.Drawing.Size(86, 31);
+            this.btn_Base64Encode.TabIndex = 3;
+            this.btn_Base64Encode.Text = "Base64加密";
+            this.btn_Base64Encode.UseVisualStyleBackColor = true;
+            this.btn_Base64Encode.Click += new System.EventHandler(this.btn_EnBase64_Click);
             // 
-            // btn_DeBase64
+            // btn_Base64Decode
             // 
-            this.btn_DeBase64.Location = new System.Drawing.Point(601, 145);
-            this.btn_DeBase64.Name = "btn_DeBase64";
-            this.btn_DeBase64.Size = new System.Drawing.Size(86, 32);
-            this.btn_DeBase64.TabIndex = 2;
-            this.btn_DeBase64.Text = "Base64解密";
-            this.btn_DeBase64.UseVisualStyleBackColor = true;
-            this.btn_DeBase64.Click += new System.EventHandler(this.btn_DeBase64_Click);
+            this.btn_Base64Decode.Location = new System.Drawing.Point(601, 145);
+            this.btn_Base64Decode.Name = "btn_Base64Decode";
+            this.btn_Base64Decode.Size = new System.Drawing.Size(86, 32);
+            this.btn_Base64Decode.TabIndex = 2;
+            this.btn_Base64Decode.Text = "Base64解密";
+            this.btn_Base64Decode.UseVisualStyleBackColor = true;
+            this.btn_Base64Decode.Click += new System.EventHandler(this.btn_DeBase64_Click);
             // 
             // text_Base_output
             // 
@@ -604,8 +604,8 @@
         private System.Windows.Forms.TabPage Bacon;
         private System.Windows.Forms.TextBox text_Base_output;
         private System.Windows.Forms.TextBox text_Base_input;
-        private System.Windows.Forms.Button btn_EnBase64;
-        private System.Windows.Forms.Button btn_DeBase64;
+        private System.Windows.Forms.Button btn_Base64Encode;
+        private System.Windows.Forms.Button btn_Base64Decode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Pic2Base64;
         private System.Windows.Forms.Button btn_Base642Pic;

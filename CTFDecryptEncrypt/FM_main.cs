@@ -19,12 +19,12 @@ namespace CTFDecryptEncrypt
         #region Base64/32模块
         private void btn_DeBase64_Click(object sender, EventArgs e)
         {
-            text_Base_output.Text = DecryptEncrypt.d_base64(text_Base_input.Text);
+            text_Base_output.Text = DecryptEncrypt.Base64Decode(text_Base_input.Text);
         }
 
         private void btn_EnBase64_Click(object sender, EventArgs e)
         {
-            text_Base_output.Text = DecryptEncrypt.e_base64(text_Base_input.Text);
+            text_Base_output.Text = DecryptEncrypt.Base64Encode(text_Base_input.Text);
         }
         
         private void btn_Base642Pic_Click(object sender, EventArgs e)

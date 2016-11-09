@@ -16,11 +16,11 @@ namespace CTFDecryptEncrypt
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        static public string d_base64(string text)  //base64->string
+        static public string Base64Decode(string str)  //base64->string
         {
             try
             {
-                return System.Text.ASCIIEncoding.Default.GetString(Convert.FromBase64String(text));
+                return System.Text.ASCIIEncoding.Default.GetString(Convert.FromBase64String(str));
             }
             catch
             {
@@ -28,12 +28,12 @@ namespace CTFDecryptEncrypt
                 return "";
             }
         }
-        static public string e_base64(string text)  //string->base64
+        static public string Base64Encode(string str)  //string->base64
         {
             try
             {
                 System.Text.Encoding encode = System.Text.Encoding.ASCII;
-                byte[] bytedata = encode.GetBytes(text);
+                byte[] bytedata = encode.GetBytes(str);
                 return Convert.ToBase64String(bytedata, 0, bytedata.Length);
             }
             catch
@@ -142,7 +142,7 @@ namespace CTFDecryptEncrypt
         {
             //a-z:97-122;A-Z:65-90;0-9:48-57
             string output = "";int length = text.Length;
-            if (symbol) //保留符号
+            if (symbol) //带符号加解密
             {
                 for (int i = 0; i < length; i++)
                 {
@@ -176,7 +176,7 @@ namespace CTFDecryptEncrypt
                         if (asciinum > 122)
                             asciinum = asciinum - 26;
                     }
-                    else
+                    else //对不是字母和阿拉伯数字的字符保留
                     {
                         asciinum = temp;
                     }
