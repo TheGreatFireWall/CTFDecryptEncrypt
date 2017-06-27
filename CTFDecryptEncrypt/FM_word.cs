@@ -17,6 +17,12 @@ namespace CTFDecryptEncrypt
             InitializeComponent();
         }
 
+        public void getPipe(string str)
+        {
+            text_WordInput.Text = str;
+            this.Show();
+        }
+
         private void btn_WordUp_Click(object sender, EventArgs e)
         {
             text_WordOutput.Text = text_WordInput.Text.ToUpper();
@@ -60,6 +66,16 @@ namespace CTFDecryptEncrypt
         private void text_WordInput_TextChanged(object sender, EventArgs e)
         {
             text_WordLength.Text = Convert.ToString(text_WordInput.Text.Length);
+        }
+
+        private void btn_WordReverse_Click(object sender, EventArgs e)
+        {
+            string res = "";
+            for (int i = text_WordInput.Text.Length-1; i >= 0; i--)
+            {
+                res += text_WordInput.Text[i];
+            }
+            text_WordOutput.Text = res;
         }
     }
 }

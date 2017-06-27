@@ -16,6 +16,9 @@ namespace CTFDecryptEncrypt
         {
             InitializeComponent();
         }
+
+        
+
         #region Base64/32模块
         private void btn_DeBase64_Click(object sender, EventArgs e)
         {
@@ -117,6 +120,26 @@ namespace CTFDecryptEncrypt
             FM_Conversion son = new FM_Conversion();
             son.Owner = this;
             son.Show();
+        }
+
+        private void 进制转换ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FM_Conversion son = new FM_Conversion();
+            son.Owner = this;
+            son.Show();
+        }
+
+        private void 文本处理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FM_word son = new FM_word();
+            son.Owner = this;
+            son.Show();
+        }
+
+        private void 文本处理ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FM_word pipe= new FM_word();
+            pipe.getPipe(text_Base_output.Text);
         }
     }
 }

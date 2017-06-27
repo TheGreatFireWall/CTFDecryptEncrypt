@@ -16,7 +16,7 @@ namespace CTFDecryptEncrypt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FM_main());
+            Application.Run(new FM_Conversion());
         }
     }
 }

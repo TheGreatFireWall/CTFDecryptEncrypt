@@ -11,11 +11,12 @@ namespace CTFDecryptEncrypt
 {
     static class DecryptEncrypt
     {
+        #region base64/base32
         /// <summary>
-        /// base64加密解密
+        /// base64解密
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">basee64</param>
+        /// <returns>原文</returns>
         static public string Base64Decode(string str)  //base64->string
         {
             try
@@ -28,6 +29,11 @@ namespace CTFDecryptEncrypt
                 return "";
             }
         }
+        /// <summary>
+        /// base64加密
+        /// </summary>
+        /// <param name="str">原文</param>
+        /// <returns>bsae64</returns>
         static public string Base64Encode(string str)  //string->base64
         {
             try
@@ -43,6 +49,11 @@ namespace CTFDecryptEncrypt
             }
         }
         //https://github.com/koike/Base32
+        /// <summary>
+        /// base32加密
+        /// </summary>
+        /// <param name="str">原文</param>
+        /// <returns>Base32</returns>
         public static string Base32Encode(string str)
         {
             var bin = "";
@@ -85,6 +96,11 @@ namespace CTFDecryptEncrypt
 
             return str;
         }
+        /// <summary>
+        /// base32解密
+        /// </summary>
+        /// <param name="str">Base32</param>
+        /// <returns>原文</returns>
         public static string Base32Decode(string str)
         {
             str = Regex.Replace(str, "=", "");
@@ -130,7 +146,9 @@ namespace CTFDecryptEncrypt
 
             return str;
         }
-       
+        #endregion
+
+        #region caesar
         /// <summary>
         /// Caesar加密解密
         /// </summary>
@@ -186,7 +204,9 @@ namespace CTFDecryptEncrypt
             }
             return output;
         }
+        #endregion
 
+        #region md5
         /// <summary>
         /// MD5加密
         /// </summary>
@@ -200,10 +220,12 @@ namespace CTFDecryptEncrypt
             string encryptResult = BitConverter.ToString(output).Replace("-", "");
             return encryptResult;
         }
+        #endregion
 
+        //AES http://blog.csdn.net/yxtyxt3311/article/details/6999977
 
     }
-   
+
 
 
 }

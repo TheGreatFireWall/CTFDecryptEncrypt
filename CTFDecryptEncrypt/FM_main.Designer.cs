@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.Tab_Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.关闭该标签页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Base_re = new System.Windows.Forms.TabPage();
+            this.send_Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.发送结果到ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编码解码ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.加密解密ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.其它工具ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.进制转换ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.文本处理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.插件ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Base32Encode = new System.Windows.Forms.Button();
             this.btn_Base32Decode = new System.Windows.Forms.Button();
             this.btn_BaseSend = new System.Windows.Forms.Button();
@@ -72,8 +83,22 @@
             this.others = new System.Windows.Forms.TabPage();
             this.btn_Conversion = new System.Windows.Forms.Button();
             this.btn_Word = new System.Windows.Forms.Button();
+            this.menu_top = new System.Windows.Forms.MenuStrip();
+            this.编码解码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.加密解密ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.插件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.进制转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.文本处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.其它工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.本工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.插件编写ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.作者网站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
+            this.Tab_Menu.SuspendLayout();
             this.btn_Base_re.SuspendLayout();
+            this.send_Menu.SuspendLayout();
             this.Morse.SuspendLayout();
             this.Caesar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Caesar_choice)).BeginInit();
@@ -81,10 +106,15 @@
             this.Brainfuck.SuspendLayout();
             this.MD5.SuspendLayout();
             this.others.SuspendLayout();
+            this.menu_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl.ContextMenuStrip = this.Tab_Menu;
             this.tabControl.Controls.Add(this.btn_Base_re);
             this.tabControl.Controls.Add(this.Morse);
             this.tabControl.Controls.Add(this.Caesar);
@@ -99,16 +129,30 @@
             this.tabControl.Controls.Add(this.AES);
             this.tabControl.Controls.Add(this.MD5);
             this.tabControl.Controls.Add(this.others);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(809, 431);
+            this.tabControl.Size = new System.Drawing.Size(809, 403);
             this.tabControl.TabIndex = 0;
+            // 
+            // Tab_Menu
+            // 
+            this.Tab_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.关闭该标签页ToolStripMenuItem});
+            this.Tab_Menu.Name = "Tab_Menu";
+            this.Tab_Menu.Size = new System.Drawing.Size(149, 26);
+            this.Tab_Menu.Text = "标签页";
+            // 
+            // 关闭该标签页ToolStripMenuItem
+            // 
+            this.关闭该标签页ToolStripMenuItem.Name = "关闭该标签页ToolStripMenuItem";
+            this.关闭该标签页ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.关闭该标签页ToolStripMenuItem.Text = "关闭该标签页";
             // 
             // btn_Base_re
             // 
+            this.btn_Base_re.ContextMenuStrip = this.send_Menu;
             this.btn_Base_re.Controls.Add(this.btn_Base32Encode);
             this.btn_Base_re.Controls.Add(this.btn_Base32Decode);
             this.btn_Base_re.Controls.Add(this.btn_BaseSend);
@@ -122,10 +166,68 @@
             this.btn_Base_re.Location = new System.Drawing.Point(4, 26);
             this.btn_Base_re.Name = "btn_Base_re";
             this.btn_Base_re.Padding = new System.Windows.Forms.Padding(3);
-            this.btn_Base_re.Size = new System.Drawing.Size(801, 401);
+            this.btn_Base_re.Size = new System.Drawing.Size(801, 373);
             this.btn_Base_re.TabIndex = 0;
             this.btn_Base_re.Text = "Base64/32";
             this.btn_Base_re.UseVisualStyleBackColor = true;
+            // 
+            // send_Menu
+            // 
+            this.send_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.发送结果到ToolStripMenuItem});
+            this.send_Menu.Name = "send_Menu";
+            this.send_Menu.Size = new System.Drawing.Size(137, 26);
+            // 
+            // 发送结果到ToolStripMenuItem
+            // 
+            this.发送结果到ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.编码解码ToolStripMenuItem1,
+            this.加密解密ToolStripMenuItem1,
+            this.其它工具ToolStripMenuItem1,
+            this.插件ToolStripMenuItem1});
+            this.发送结果到ToolStripMenuItem.Name = "发送结果到ToolStripMenuItem";
+            this.发送结果到ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.发送结果到ToolStripMenuItem.Text = "发送结果到";
+            // 
+            // 编码解码ToolStripMenuItem1
+            // 
+            this.编码解码ToolStripMenuItem1.Name = "编码解码ToolStripMenuItem1";
+            this.编码解码ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.编码解码ToolStripMenuItem1.Text = "编码解码";
+            // 
+            // 加密解密ToolStripMenuItem1
+            // 
+            this.加密解密ToolStripMenuItem1.Name = "加密解密ToolStripMenuItem1";
+            this.加密解密ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.加密解密ToolStripMenuItem1.Text = "加密解密";
+            // 
+            // 其它工具ToolStripMenuItem1
+            // 
+            this.其它工具ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.进制转换ToolStripMenuItem1,
+            this.文本处理ToolStripMenuItem1});
+            this.其它工具ToolStripMenuItem1.Name = "其它工具ToolStripMenuItem1";
+            this.其它工具ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.其它工具ToolStripMenuItem1.Text = "其它工具";
+            // 
+            // 进制转换ToolStripMenuItem1
+            // 
+            this.进制转换ToolStripMenuItem1.Name = "进制转换ToolStripMenuItem1";
+            this.进制转换ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.进制转换ToolStripMenuItem1.Text = "进制转换";
+            // 
+            // 文本处理ToolStripMenuItem1
+            // 
+            this.文本处理ToolStripMenuItem1.Name = "文本处理ToolStripMenuItem1";
+            this.文本处理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.文本处理ToolStripMenuItem1.Text = "文本处理";
+            this.文本处理ToolStripMenuItem1.Click += new System.EventHandler(this.文本处理ToolStripMenuItem1_Click);
+            // 
+            // 插件ToolStripMenuItem1
+            // 
+            this.插件ToolStripMenuItem1.Name = "插件ToolStripMenuItem1";
+            this.插件ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.插件ToolStripMenuItem1.Text = "插件";
             // 
             // btn_Base32Encode
             // 
@@ -230,7 +332,7 @@
             this.Morse.Location = new System.Drawing.Point(4, 26);
             this.Morse.Name = "Morse";
             this.Morse.Padding = new System.Windows.Forms.Padding(3);
-            this.Morse.Size = new System.Drawing.Size(801, 401);
+            this.Morse.Size = new System.Drawing.Size(801, 373);
             this.Morse.TabIndex = 1;
             this.Morse.Text = "摩斯密码";
             this.Morse.UseVisualStyleBackColor = true;
@@ -241,7 +343,7 @@
             this.webBrowser_morse.Location = new System.Drawing.Point(3, 3);
             this.webBrowser_morse.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_morse.Name = "webBrowser_morse";
-            this.webBrowser_morse.Size = new System.Drawing.Size(795, 395);
+            this.webBrowser_morse.Size = new System.Drawing.Size(795, 367);
             this.webBrowser_morse.TabIndex = 0;
             this.webBrowser_morse.Url = new System.Uri("http://www.atool.org/morse.php", System.UriKind.Absolute);
             // 
@@ -257,7 +359,7 @@
             this.Caesar.Location = new System.Drawing.Point(4, 26);
             this.Caesar.Name = "Caesar";
             this.Caesar.Padding = new System.Windows.Forms.Padding(3);
-            this.Caesar.Size = new System.Drawing.Size(801, 401);
+            this.Caesar.Size = new System.Drawing.Size(801, 373);
             this.Caesar.TabIndex = 2;
             this.Caesar.Text = "凯撒密码";
             this.Caesar.UseVisualStyleBackColor = true;
@@ -349,7 +451,7 @@
             this.JS.Controls.Add(this.btn_JS_mix);
             this.JS.Location = new System.Drawing.Point(4, 26);
             this.JS.Name = "JS";
-            this.JS.Size = new System.Drawing.Size(801, 401);
+            this.JS.Size = new System.Drawing.Size(801, 373);
             this.JS.TabIndex = 3;
             this.JS.Text = "JS系列";
             this.JS.UseVisualStyleBackColor = true;
@@ -370,7 +472,7 @@
             this.Brainfuck.Location = new System.Drawing.Point(4, 26);
             this.Brainfuck.Name = "Brainfuck";
             this.Brainfuck.Padding = new System.Windows.Forms.Padding(3);
-            this.Brainfuck.Size = new System.Drawing.Size(801, 401);
+            this.Brainfuck.Size = new System.Drawing.Size(801, 373);
             this.Brainfuck.TabIndex = 12;
             this.Brainfuck.Text = "Brainfuck";
             this.Brainfuck.UseVisualStyleBackColor = true;
@@ -381,7 +483,7 @@
             this.webBrowser_Brainfuck.Location = new System.Drawing.Point(3, 3);
             this.webBrowser_Brainfuck.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_Brainfuck.Name = "webBrowser_Brainfuck";
-            this.webBrowser_Brainfuck.Size = new System.Drawing.Size(795, 395);
+            this.webBrowser_Brainfuck.Size = new System.Drawing.Size(795, 367);
             this.webBrowser_Brainfuck.TabIndex = 0;
             this.webBrowser_Brainfuck.Url = new System.Uri("http://esoteric.sange.fi/brainfuck/impl/interp/i.html", System.UriKind.Absolute);
             // 
@@ -389,7 +491,7 @@
             // 
             this.Url.Location = new System.Drawing.Point(4, 26);
             this.Url.Name = "Url";
-            this.Url.Size = new System.Drawing.Size(801, 401);
+            this.Url.Size = new System.Drawing.Size(801, 373);
             this.Url.TabIndex = 4;
             this.Url.Text = "URL";
             this.Url.UseVisualStyleBackColor = true;
@@ -398,7 +500,7 @@
             // 
             this.UnicodeAscii.Location = new System.Drawing.Point(4, 26);
             this.UnicodeAscii.Name = "UnicodeAscii";
-            this.UnicodeAscii.Size = new System.Drawing.Size(801, 401);
+            this.UnicodeAscii.Size = new System.Drawing.Size(801, 373);
             this.UnicodeAscii.TabIndex = 5;
             this.UnicodeAscii.Text = "Unicode/Ascii";
             this.UnicodeAscii.UseVisualStyleBackColor = true;
@@ -407,7 +509,7 @@
             // 
             this.Hash.Location = new System.Drawing.Point(4, 26);
             this.Hash.Name = "Hash";
-            this.Hash.Size = new System.Drawing.Size(801, 401);
+            this.Hash.Size = new System.Drawing.Size(801, 373);
             this.Hash.TabIndex = 6;
             this.Hash.Text = "Hash";
             this.Hash.UseVisualStyleBackColor = true;
@@ -416,7 +518,7 @@
             // 
             this.RailFence.Location = new System.Drawing.Point(4, 26);
             this.RailFence.Name = "RailFence";
-            this.RailFence.Size = new System.Drawing.Size(801, 401);
+            this.RailFence.Size = new System.Drawing.Size(801, 373);
             this.RailFence.TabIndex = 7;
             this.RailFence.Text = "栅栏密码";
             this.RailFence.UseVisualStyleBackColor = true;
@@ -425,7 +527,7 @@
             // 
             this.Bacon.Location = new System.Drawing.Point(4, 26);
             this.Bacon.Name = "Bacon";
-            this.Bacon.Size = new System.Drawing.Size(801, 401);
+            this.Bacon.Size = new System.Drawing.Size(801, 373);
             this.Bacon.TabIndex = 11;
             this.Bacon.Text = "培根密码";
             this.Bacon.UseVisualStyleBackColor = true;
@@ -434,7 +536,7 @@
             // 
             this.Pig.Location = new System.Drawing.Point(4, 26);
             this.Pig.Name = "Pig";
-            this.Pig.Size = new System.Drawing.Size(801, 401);
+            this.Pig.Size = new System.Drawing.Size(801, 373);
             this.Pig.TabIndex = 13;
             this.Pig.Text = "猪圈密码";
             this.Pig.UseVisualStyleBackColor = true;
@@ -443,7 +545,7 @@
             // 
             this.AES.Location = new System.Drawing.Point(4, 26);
             this.AES.Name = "AES";
-            this.AES.Size = new System.Drawing.Size(801, 401);
+            this.AES.Size = new System.Drawing.Size(801, 373);
             this.AES.TabIndex = 8;
             this.AES.Text = "AES/DES";
             this.AES.UseVisualStyleBackColor = true;
@@ -459,7 +561,7 @@
             this.MD5.Controls.Add(this.webBrowser_md5);
             this.MD5.Location = new System.Drawing.Point(4, 26);
             this.MD5.Name = "MD5";
-            this.MD5.Size = new System.Drawing.Size(801, 401);
+            this.MD5.Size = new System.Drawing.Size(801, 373);
             this.MD5.TabIndex = 9;
             this.MD5.Text = "MD5";
             this.MD5.UseVisualStyleBackColor = true;
@@ -527,7 +629,7 @@
             this.webBrowser_md5.Location = new System.Drawing.Point(0, 0);
             this.webBrowser_md5.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_md5.Name = "webBrowser_md5";
-            this.webBrowser_md5.Size = new System.Drawing.Size(801, 401);
+            this.webBrowser_md5.Size = new System.Drawing.Size(801, 373);
             this.webBrowser_md5.TabIndex = 0;
             this.webBrowser_md5.Url = new System.Uri("http://www.cmd5.com/", System.UriKind.Absolute);
             // 
@@ -537,7 +639,7 @@
             this.others.Controls.Add(this.btn_Word);
             this.others.Location = new System.Drawing.Point(4, 26);
             this.others.Name = "others";
-            this.others.Size = new System.Drawing.Size(801, 401);
+            this.others.Size = new System.Drawing.Size(801, 373);
             this.others.TabIndex = 10;
             this.others.Text = "其它";
             this.others.UseVisualStyleBackColor = true;
@@ -562,18 +664,111 @@
             this.btn_Word.UseVisualStyleBackColor = true;
             this.btn_Word.Click += new System.EventHandler(this.btn_Word_Click);
             // 
+            // menu_top
+            // 
+            this.menu_top.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.编码解码ToolStripMenuItem,
+            this.加密解密ToolStripMenuItem,
+            this.插件ToolStripMenuItem,
+            this.其它工具ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
+            this.menu_top.Location = new System.Drawing.Point(0, 0);
+            this.menu_top.Name = "menu_top";
+            this.menu_top.Size = new System.Drawing.Size(809, 25);
+            this.menu_top.TabIndex = 1;
+            this.menu_top.Text = "menu_top";
+            // 
+            // 编码解码ToolStripMenuItem
+            // 
+            this.编码解码ToolStripMenuItem.Name = "编码解码ToolStripMenuItem";
+            this.编码解码ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.编码解码ToolStripMenuItem.Text = "编码解码";
+            // 
+            // 加密解密ToolStripMenuItem
+            // 
+            this.加密解密ToolStripMenuItem.Name = "加密解密ToolStripMenuItem";
+            this.加密解密ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.加密解密ToolStripMenuItem.Text = "加密解密";
+            // 
+            // 插件ToolStripMenuItem
+            // 
+            this.插件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.进制转换ToolStripMenuItem,
+            this.文本处理ToolStripMenuItem});
+            this.插件ToolStripMenuItem.Name = "插件ToolStripMenuItem";
+            this.插件ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.插件ToolStripMenuItem.Text = "其它工具";
+            // 
+            // 进制转换ToolStripMenuItem
+            // 
+            this.进制转换ToolStripMenuItem.Name = "进制转换ToolStripMenuItem";
+            this.进制转换ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.进制转换ToolStripMenuItem.Text = "进制转换";
+            this.进制转换ToolStripMenuItem.Click += new System.EventHandler(this.进制转换ToolStripMenuItem_Click);
+            // 
+            // 文本处理ToolStripMenuItem
+            // 
+            this.文本处理ToolStripMenuItem.Name = "文本处理ToolStripMenuItem";
+            this.文本处理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.文本处理ToolStripMenuItem.Text = "文本处理";
+            this.文本处理ToolStripMenuItem.Click += new System.EventHandler(this.文本处理ToolStripMenuItem_Click);
+            // 
+            // 其它工具ToolStripMenuItem
+            // 
+            this.其它工具ToolStripMenuItem.Name = "其它工具ToolStripMenuItem";
+            this.其它工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.其它工具ToolStripMenuItem.Text = "插件";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.本工具ToolStripMenuItem,
+            this.插件编写ToolStripMenuItem,
+            this.更新ToolStripMenuItem,
+            this.作者网站ToolStripMenuItem});
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.关于ToolStripMenuItem.Text = "关于";
+            // 
+            // 本工具ToolStripMenuItem
+            // 
+            this.本工具ToolStripMenuItem.Name = "本工具ToolStripMenuItem";
+            this.本工具ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.本工具ToolStripMenuItem.Text = "本工具";
+            // 
+            // 插件编写ToolStripMenuItem
+            // 
+            this.插件编写ToolStripMenuItem.Name = "插件编写ToolStripMenuItem";
+            this.插件编写ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.插件编写ToolStripMenuItem.Text = "插件编写";
+            // 
+            // 更新ToolStripMenuItem
+            // 
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.更新ToolStripMenuItem.Text = "更新";
+            // 
+            // 作者网站ToolStripMenuItem
+            // 
+            this.作者网站ToolStripMenuItem.Name = "作者网站ToolStripMenuItem";
+            this.作者网站ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.作者网站ToolStripMenuItem.Text = "作者网站";
+            // 
             // FM_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 431);
             this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.menu_top);
             this.Name = "FM_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CTFDecryptEncrypt";
             this.tabControl.ResumeLayout(false);
+            this.Tab_Menu.ResumeLayout(false);
             this.btn_Base_re.ResumeLayout(false);
             this.btn_Base_re.PerformLayout();
+            this.send_Menu.ResumeLayout(false);
             this.Morse.ResumeLayout(false);
             this.Caesar.ResumeLayout(false);
             this.Caesar.PerformLayout();
@@ -583,7 +778,10 @@
             this.MD5.ResumeLayout(false);
             this.MD5.PerformLayout();
             this.others.ResumeLayout(false);
+            this.menu_top.ResumeLayout(false);
+            this.menu_top.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -633,6 +831,28 @@
         private System.Windows.Forms.Button btn_Word;
         private System.Windows.Forms.Button btn_Conversion;
         private System.Windows.Forms.TabPage Pig;
+        private System.Windows.Forms.MenuStrip menu_top;
+        private System.Windows.Forms.ToolStripMenuItem 编码解码ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 加密解密ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 其它工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 进制转换ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 文本处理ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip Tab_Menu;
+        private System.Windows.Forms.ToolStripMenuItem 关闭该标签页ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip send_Menu;
+        private System.Windows.Forms.ToolStripMenuItem 发送结果到ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编码解码ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 加密解密ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 其它工具ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 进制转换ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 文本处理ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 插件ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 本工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 插件编写ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 作者网站ToolStripMenuItem;
     }
 }
 

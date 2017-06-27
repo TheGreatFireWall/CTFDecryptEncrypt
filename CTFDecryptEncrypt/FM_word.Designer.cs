@@ -40,6 +40,7 @@
             this.btn_WordFind = new System.Windows.Forms.Button();
             this.text_WordLength = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_WordReverse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // text_WordInput
@@ -152,11 +153,22 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "长度:";
             // 
+            // btn_WordReverse
+            // 
+            this.btn_WordReverse.Location = new System.Drawing.Point(380, 173);
+            this.btn_WordReverse.Name = "btn_WordReverse";
+            this.btn_WordReverse.Size = new System.Drawing.Size(86, 32);
+            this.btn_WordReverse.TabIndex = 21;
+            this.btn_WordReverse.Text = "倒序";
+            this.btn_WordReverse.UseVisualStyleBackColor = true;
+            this.btn_WordReverse.Click += new System.EventHandler(this.btn_WordReverse_Click);
+            // 
             // FM_word
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 341);
+            this.Controls.Add(this.btn_WordReverse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.text_WordLength);
             this.Controls.Add(this.btn_WordFind);
@@ -191,5 +203,6 @@
         private System.Windows.Forms.Button btn_WordFind;
         private System.Windows.Forms.TextBox text_WordLength;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_WordReverse;
     }
 }
